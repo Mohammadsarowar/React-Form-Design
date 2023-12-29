@@ -8,16 +8,31 @@ import "./index.css";
 import Dashboard from "./components/dashbord/Dashboard";
 import OfferLetter from "./components/application-from/offer-letter/OfferLetter";
 import App from "./App";
+import Error from "./components/error/Error";
+import InitalComponent from "./components/share/InitialContractShare/InitalComponent";
+import InitialContract from "./components/application-from/initial-contract/InitialContract";
+import FingerPrint from "./components/application-from/finger-print/FingerPrint";
+import Home from "./components/Home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
+    errorElement:<Error/>,
     children:[
       {
-        path:'/add-room',
+        path:'/',
+        element:<Home/>
+      },
+      {
+        path:'/offerLetter',
         element:<OfferLetter/>
+      },
+      {
+        path:'/InitialContract',
+        element:<InitialContract/>
       }
+
     ]
   },
 ]);

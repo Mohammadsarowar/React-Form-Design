@@ -5,8 +5,8 @@ import { BsFillHouseAddFill} from 'react-icons/bs'
 import { GrLogout } from 'react-icons/gr'
 import { FcSettings } from 'react-icons/fc'
 import { AiOutlineBars } from 'react-icons/ai'
-
-
+import { BsFillPeopleFill } from "react-icons/bs";
+import { FaWpforms } from "react-icons/fa6";
 import { MdHomeWork, MdOutlineManageHistory } from 'react-icons/md'
 
 
@@ -96,16 +96,16 @@ const Dashboard = () => {
                     type='checkbox'
                     className='hidden peer'
                   />
-                  <span className='px-4 py-1 rounded-l-md bg-rose-400 peer-checked:bg-gray-300'>
+                  <span className='px-4 py-1 rounded-l-md bg-teal-600 peer-checked:bg-gray-300'>
                     Guest
                   </span>
-                  <span className='px-4 py-1 rounded-r-md bg-gray-300 peer-checked:bg-rose-400'>
+                  <span className='px-4 py-1 rounded-r-md bg-gray-300 peer-checked:bg-teal-600'>
                     Host
                   </span>
                 </label>
                 {/* Menu Links */}
                 <NavLink
-        to='add-room'
+        to='/'
         className={({ isActive }) =>
           `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
             isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
@@ -114,8 +114,93 @@ const Dashboard = () => {
       >
         <BsFillHouseAddFill className='w-5 h-5' />
 
-        <span className='mx-4 font-medium'>Add Room</span>
+        <span className='mx-4 font-medium'>Home</span>
       </NavLink>
+                <NavLink
+        to='/employee'
+        className={({ isActive }) =>
+          `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+            isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
+          }`
+        }
+      >
+        <BsFillPeopleFill  className='w-5 h-5' />
+
+        <span className='mx-4 font-medium'>Employee</span>
+      </NavLink>
+     
+               
+                <NavLink
+        to='offerLetter'
+        className={({ isActive }) =>
+          `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+            isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
+          }`
+        }
+      >
+        <BsFillHouseAddFill className='w-5 h-5' />
+
+        <span className='mx-4 font-medium'>Offer Letter</span>
+      </NavLink>
+      <div className='mt-5'>
+          <details className="  rounded-lg  text-gray-700">
+            <summary
+              className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-600 hover:bg-gray-300 hover:text-gray-700"
+            ><FaWpforms />
+              <span className="text-sm font-medium"> Account </span>
+
+              <span className="shrink-0 transition duration-300 group-open:-rotate-180">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </summary>
+
+            <ul className="mt-2 space-y-1 px-4">
+              <li>
+                <NavLink
+                           to='offerLetter'
+        className={({ isActive }) =>
+          `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+            isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
+          }`
+        }
+                >
+               Offer Letter
+                </NavLink>
+              </li>
+
+              <li>
+                <a
+                  href=""
+                  className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                >
+                  Security
+                </a>
+              </li>
+
+              <li>
+                <form action="/logout">
+                  <button
+                    type="submit"
+                    className="w-full rounded-lg px-4 py-2 text-sm font-medium text-gray-500 [text-align:_inherit] hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    Logout
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </details>
+        </div>
             </nav>
           </div>
         </div>
@@ -134,6 +219,7 @@ const Dashboard = () => {
 
             <span className='mx-4 font-medium'>Profile</span>
           </NavLink>
+          
           <button
             
             className='flex w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform'
