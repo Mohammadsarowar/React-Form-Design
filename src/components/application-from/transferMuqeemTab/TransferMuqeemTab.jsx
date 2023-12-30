@@ -54,8 +54,15 @@ const TransferMuqeemTab = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="lg:ml-72 mx-auto m-4">
-    <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
+    <form onSubmit={handleSubmit(onSubmit)} className="lg:ml-72 bg-gray-200 lg:mr-5 rounded-lg mx-auto m-4">
+       <span className="flex items-center">
+            <span className="h-px flex-1 bg-teal-600"></span>
+            <span className="shrink-0 px-6 font-mono font-bold text-teal-700">
+             Input Forms / Display Only Data
+            </span>
+            <span className="h-px flex-1 bg-teal-600"></span>
+          </span>
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 m-5">
   <div className="lg:col-span-2">
       <div className="grid lg:grid-cols-3 gap-3">
     {fields.map((fieldName) => (

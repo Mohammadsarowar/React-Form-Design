@@ -18,6 +18,9 @@ import TransferNaqalkafala from "./components/application-from/transferNaqalkafa
 import TransferMuqeemTab from "./components/application-from/transferMuqeemTab/TransferMuqeemTab";
 import PrintIqama from "./components/application-from/printIqama/PrintIqama";
 import Karar from "./components/application-from/karar/Karar";
+import Insurance from "./components/application-from/insurance/Insurance";
+import NewAdUser from "./components/application-from/newAdUser/NewAdUser";
+import AddGosi from "./components/allFroms/addGosi/AddGosi";
 
 const router = createBrowserRouter([
   {
@@ -50,16 +53,28 @@ const router = createBrowserRouter([
         element:<TransferNaqalkafala/>
       },
       {
-        path:"transferMuqeemTab",
+        path:"/transferMuqeem",
         element:<TransferMuqeemTab/>
       },
       {
-        path:'printIqama',
+        path:'/printIqama',
         element:<PrintIqama/>
       },
       {
-        path:'karar',
+        path:'/karar',
         element:<Karar/>
+      },
+      {
+        path:'/insurance',
+        element:<Insurance/>
+      },
+      {
+        path:'/newAdUser',
+        element:<NewAdUser/>
+      },
+      {
+        path:'/addGosi',
+        element:<AddGosi/>
       }
 
     ]

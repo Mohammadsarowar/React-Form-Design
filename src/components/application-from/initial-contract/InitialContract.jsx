@@ -46,7 +46,7 @@ const InitialContract = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="lg:ml-72 bg-gray-300 p-2 rounded-md">
     
-    <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 ">
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 font-serif">
   <div class="grid grid-cols-2 gap-2 rounded-lg  lg:col-span-2 mt-5">
 
   {salaryFields.map((fieldName) => (
@@ -55,7 +55,7 @@ const InitialContract = () => {
             {fieldName.charAt(0).toUpperCase() + fieldName.slice(1).replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
           </label>
           <input
-          placeholder={fieldName}
+          placeholder={fieldName.charAt(0).toUpperCase() + fieldName.slice(1)}
             type={fieldName.includes("Date") ? "date" : "text"} // Set input type based on field name
             id={fieldName}
             {...register(fieldName)}
@@ -88,7 +88,7 @@ const InitialContract = () => {
       {fields.map((fieldName) => (
         <div key={fieldName} className="mb-4">
           <label htmlFor={fieldName} className="block text-sm font-medium text-gray-600">
-            {fieldName.replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
+            {fieldName.charAt(0).toUpperCase() + fieldName.slice(1).replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
           </label>
           <input
             type="text"
@@ -103,7 +103,7 @@ const InitialContract = () => {
      {addressFields.map((fieldName) => (
         <div key={fieldName} className="mb-4">
           <label htmlFor={fieldName} className="block text-sm font-medium text-gray-600">
-            {fieldName.replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
+            {fieldName.charAt(0).toUpperCase() + fieldName.slice(1).replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
           </label>
           <input
             type="text"
@@ -118,15 +118,20 @@ const InitialContract = () => {
   </div>
 </div>
       {/* ... (Other fields or sections) */}
- <div className="text-center mb-5 ">
-      {/* Submit Button */}
-      <button
-        type="submit"
-        className="bg-blue-500 text-white w-96 px-4 py-2 rounded hover:bg-blue-700"
-      >
-        Submit
-      </button>
- </div>
+     {/* Submit Button */}
+     <div className=" text-center mb-5">
+              <button type="submit" class="group  text-center relative inline-block focus:outline-none focus:ring" >
+  <span
+    class="absolute inset-0 translate-x-1.5 translate-y-1.5  bg-teal-600 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
+  ></span>
+
+  <span
+    class="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75"
+  >
+ Submit
+  </span>
+</button>
+      </div>
     
     </form>
   );

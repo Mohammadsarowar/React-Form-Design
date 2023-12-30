@@ -86,10 +86,10 @@ const hierarchyOptions = [
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="lg:ml-72 mx-auto bg-gray-200">
-    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8 font-serif">
+    <form onSubmit={handleSubmit(onSubmit)} className="lg:ml-72 mx-auto bg-gray-200 rounded-md lg:mr-5">
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8 font-serif m-5">
     <div>
-    <p className="text-center mx-auto items-center mt-3 font-mono text-teal-600 bg-white w-32 rounded-lg">
+    <p className="text-center mx-auto items-center mt-3 font-mono text-teal-600 bg-white w-44 rounded-lg">
            Input Fields Data
           </p>
       <div className=" grid grid-cols-2 gap-2 lg:mr-5">
@@ -110,7 +110,7 @@ const hierarchyOptions = [
       {data.map((fieldName) => (
         <div key={fieldName} className="mb-4">
           <label htmlFor={fieldName} className="block text-sm font-medium text-gray-600">
-            {fieldName.replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
+            {fieldName.charAt(0).toUpperCase() + fieldName.slice(1).replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
           </label>
          
           <div className="space-y-1 text-sm ">
@@ -141,7 +141,7 @@ const hierarchyOptions = [
     {displayOnlyFields.map((fieldName) => (
         <div key={fieldName} className="mb-4">
           <label htmlFor={fieldName} className="block text-sm font-medium text-gray-600">
-            {fieldName.replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
+            {fieldName.charAt(0).toUpperCase() + fieldName.slice(1).replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
           </label>
           <input
             type="text"
@@ -156,14 +156,14 @@ const hierarchyOptions = [
       {displayOnlyField.map((fieldName) => (
         <div key={fieldName} className="mb-4">
           <label htmlFor={fieldName} className="block text-sm font-medium text-gray-600">
-            {fieldName.replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
+            {fieldName.charAt(0).toUpperCase() + fieldName.slice(1).replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
           </label>
           <input
             type="text"
             id={fieldName}
             defaultValue={displayOnly[fieldName] || ""}
             readOnly
-            className="mt-1 p-2 w-full border rounded-md bg-gray-100"
+            className="mt-1 p-2 w-full px-4 py-3  text-gray-800 border border-teal-300 focus:outline-teal-600 rounded-md"
           />
         </div>
       ))}
@@ -174,13 +174,23 @@ const hierarchyOptions = [
       
       {/* ... (Other fields or sections) */}
 
-      {/* Submit Button */}
-      <button
-        type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
-      >
-        Submit
-      </button>
+    {/* Submit Button */}
+    <div className="text-center ">
+     
+     {/* Hover */}
+
+<button  type="submit" className="group w-96 relative inline-block focus:outline-none focus:ring">
+ <span
+   className="absolute mb-5 inset-0 translate-x-0 translate-y-0 bg-teal-600 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"
+ ></span>
+
+ <span
+   className="relative text-white  mb-5 inline-block w-96 border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest"
+ >
+submit
+ </span>
+</button>
+   </div>
     </form>
   );
 };

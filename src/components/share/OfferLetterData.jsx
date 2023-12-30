@@ -50,10 +50,10 @@ const OfferLetterData = () => {
     <thead className="ltr:text-left rtl:text-right">
       <tr>
         <button className=" whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-            sd
+            Name
         </button>
-        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Date of Birth</th>
-        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Role</th>
+        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Expiry Date</th>
+        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Job Title</th>
         <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Salary</th>
       </tr>
     </thead>

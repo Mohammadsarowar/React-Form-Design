@@ -150,12 +150,23 @@ const PrintIqama = () => {
       {/* ... (Other fields or sections) */}
 
       {/* Submit Button */}
-      <button
-        type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
-      >
-        Submit
-      </button>
+      {/* Submit Button */}
+    <div className="text-center ">
+     
+     {/* Hover */}
+
+<button  type="submit" className="group w-96 relative inline-block focus:outline-none focus:ring">
+ <span
+   className="absolute mb-5 inset-0 translate-x-0 translate-y-0 bg-teal-600 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"
+ ></span>
+
+ <span
+   className="relative text-white  mb-5 inline-block w-96 border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest"
+ >
+submit
+ </span>
+</button>
+   </div>
     </form>
   );
 };
