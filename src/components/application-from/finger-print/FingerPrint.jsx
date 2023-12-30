@@ -30,7 +30,7 @@ const FingerPrint = () => {
     {fields.map((fieldName) => (
         <div key={fieldName} className=" ">
           <label htmlFor={fieldName} className="block text-sm font-medium text-gray-600">
-            {fieldName.replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
+            {fieldName.charAt(0).toUpperCase() + fieldName.slice(1).replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
           </label>
           <input
             type="text"
@@ -42,7 +42,7 @@ const FingerPrint = () => {
        {zkFields.map((fieldName) => (
         <div key={fieldName} className=" ">
           <label htmlFor={fieldName} className="block text-sm font-medium text-gray-600">
-            {fieldName.replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
+            {fieldName.charAt(0).toUpperCase() + fieldName.slice(1).replace(/([A-Z])/g, " $1").trim()} {/* Convert camelCase to Title Case */}
           </label>
           <input
             type="text"

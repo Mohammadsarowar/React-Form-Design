@@ -600,7 +600,8 @@ const OfferLetterForms = () => {
           <OfferLetterData />
         </div>
      
-      </div>   {/* Submit Button */}
+      </div> 
+        {/* Submit Button */}
       <div className=" text-center ">
      
      {/* Hover */}
